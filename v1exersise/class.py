@@ -197,39 +197,56 @@
 
 #  Animal: Parent, Base
 #  Mammal: Child, sub
-class Animal:
-    def __init__(self):
-        print('Animal Constructor')
-        self.age = 1
+# class Animal:
+#     def __init__(self):
+#         print('Animal Constructor')
+#         self.age = 1
 
+#     def eat(self):
+#         print('eat')
+
+
+# class Mammal(Animal):
+#     def __init__(self):
+#         # calling it first
+#         print('Mammal Constructor')
+#         self.weight = 1
+#         super().__init__()
+
+#         # calling it after
+#         # super().__init__()
+#         # print('Mammal Constructor')
+#         # self.weight = 1
+
+#     def walk(self):
+#         print('walk')
+
+
+# class Fish(Animal):
+#     def swim(self):
+#         print('swim')
+
+
+# m = Mammal()
+# # print(isinstance(m, object))
+# # print(issubclass(Mammal, object))
+
+# print(m.age)
+# print(m.weight)
+
+
+class Animal:
     def eat(self):
         print('eat')
 
 
-class Mammal(Animal):
-    def __init__(self):
-        # calling it first
-        print('Mammal Constructor')
-        self.weight = 1
-        super().__init__()
-
-        # calling it after
-        # super().__init__()
-        # print('Mammal Constructor')
-        # self.weight = 1
-
-    def walk(self):
-        print('walk')
+class Bird(Animal):
+    def fly(self):
+        print('fly')
 
 
-class Fish(Animal):
-    def swim(self):
-        print('swim')
+class Chicken(Bird):
+    pass
 
 
-m = Mammal()
-# print(isinstance(m, object))
-# print(issubclass(Mammal, object))
-
-print(m.age)
-print(m.weight)
+# Employee - Person - LivingCreature - Thing
