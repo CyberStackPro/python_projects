@@ -97,6 +97,7 @@
 // counter.add("JavaScript");
 
 // console.log(counter);
+// import path from "path";
 
 class WordCounter {
   constructor() {
