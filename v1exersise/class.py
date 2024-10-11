@@ -134,22 +134,65 @@
 # print(cloud)  # Output: {'python': 1, 'javascript': 1}
 
 
-class TagCloud:
-    # __init__ Method (Constructor):
-    def __init__(self):
-        self.tags = {}
+# class TagCloud:
+#     # __init__ Method (Constructor):
+#     def __init__(self):
+#         self.__tags = {}
 
-    def add(self, tag):
-        # self.tags.get(key, default)
-        self.tags[tag.lower()] = self.tags.get(tag.lower(), 0) + 1
+#     def add(self, tag):
+#         # self.tags.get(key, default)
+#         self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
 
-    def __getitem__(self, tag):
-        return self.tags.get(tag.lower(), 0)
+#     def __getitem__(self, tag):
+#         return self.__tags.get(tag.lower(), 0)
+
+#     def __setitem__(self, tag, count):
+#         self.__tags[tag.lower()] = count
+
+#     def __len__(self):
+#         return len(self.__tags)
+
+#     def __iter__(self):
+#         return iter(self.__tags)
 
 
-cloud = TagCloud()
-cloud['python']
-cloud.add('Python')
-cloud.add('Python')
-cloud.add('python')
-print(cloud.tags)
+# cloud = TagCloud()
+# # cloud['python'] = 10
+# # we can access the __tags with this
+# print(cloud.__dict__)
+# cloud.add('python')
+# cloud.add('python')
+# cloud.add('python')
+# cloud.add('python')
+
+# # to get length
+# # print(cloud.__len__())
+
+# # print(cloud.__tags['Python'])
+# print(cloud._TagCloud__tags)
+
+# class Product:
+#     def __init__(self, price):
+#         self.price = price
+
+#     @property
+#     def price(self):
+#         return self.__price
+
+#     @price.setter
+#     def price(self, value):
+#         if value < 0:
+#             raise ValueError('Price cannot be negative.')
+#         self.__price = value
+
+#     # /  and we can apply this by using decorator like @property on the header of the function
+#     # price = property(get_price, set_price)
+
+
+# product = Product(10)
+# # print(product.price)
+# # product.price = -1
+# print(product.price)
+
+class Mammal:
+    def eat(self):
