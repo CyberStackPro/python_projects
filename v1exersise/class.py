@@ -331,31 +331,49 @@
 # print(stream.open())
 # print(stream.read())
 
-from abc import ABC, abstractmethod
+# Polymorphism and Duck Typing
+# from abc import ABC, abstractmethod
 
 
-class UIControl(ABC):
-    def draw(self):
-        pass
+# # class UIControl(ABC):
+# #     def draw(self):
+# #         pass
+
+# class TextBox:
+#     def draw(self):
+#         print('TextBox')
 
 
-class TextBox(UIControl):
-    def draw(self):
-        print('TextBox')
+# class DropDownList:
+#     def draw(self):
+#         print('Dropdown List')
 
 
-class DropDownList(UIControl):
-    def draw(self):
-        print('DropDown List')
+# def draw(controls):
+#     for control in controls:
+#         control.draw()
 
 
-def draw(controls):
-    for control in controls:
-        control.draw()
+# ddl = DropDownList()
+# textbox = TextBox()
+# # print(isinstance(ddl, UIControl))
+# draw([ddl, textbox])
+# # draw(ddl)
+
+# class Text(str):
+#     def duplicate(self):
+#         return self + self
 
 
-ddl = DropDownList()
-textbox = TextBox()
-# print(isinstance(ddl, UIControl))
-draw([ddl, textbox])
-# draw(ddl)
+# text = Text('Python')
+# print(text.lower())
+
+
+# class TrackableList(list):
+#     def append(self, object):
+#         print('Append called')
+#         return super().append(object)
+
+
+# list = TrackableList()
+# list.append('1')
