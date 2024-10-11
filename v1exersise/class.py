@@ -283,31 +283,79 @@
 # class FlyingFish(Flyer, Swimmer):
 #     pass
 
-class InvalidOperationError(Exception):
-    pass
+
 # Stream of Data
+# from abc import ABC, abstractmethod
 
 
-class Stream:
-    def __init__(self):
-        self.opened = False
-
-    def open(self):
-        if self.opened:
-            raise InvalidOperationError('Stream is already open')
-        self.opened = True
-
-    def close(self):
-        if not self.opened:
-            raise InvalidOperationError('Stream is already closed')
-        self.opened = False
+# class InvalidOperationError(Exception):
+#     pass
 
 
-class FileStream(Stream):
-    def read(self):
-        print('Reading data from a file')
+# class Stream(ABC):
+#     def __init__(self):
+#         self.opened = False
+
+#     def open(self):
+#         if self.opened:
+#             raise InvalidOperationError('Stream is already open')
+#         self.opened = True
+
+#     def close(self):
+#         if not self.opened:
+#             raise InvalidOperationError('Stream is already closed')
+#         self.opened = False
+
+#     @abstractmethod
+#     def read(self):
+#         pass
 
 
-class NetworkStream(Stream):
-    def read(self):
-        print('Reading data from a network')
+# class FileStream(Stream):
+#     def read(self):
+#         print('Reading data from a file')
+
+
+# class NetworkStream(Stream):
+#     def read(self):
+#         print('Reading data from a network')
+
+
+# class MemoryStream(Stream):
+#     def read(self):
+#         print('Reading data from a memory stream')
+
+
+# stream = Stream()
+
+# print(stream.open())
+# print(stream.read())
+
+from abc import ABC, abstractmethod
+
+
+class UIControl(ABC):
+    def draw(self):
+        pass
+
+
+class TextBox(UIControl):
+    def draw(self):
+        print('TextBox')
+
+
+class DropDownList(UIControl):
+    def draw(self):
+        print('DropDown List')
+
+
+def draw(controls):
+    for control in controls:
+        control.draw()
+
+
+ddl = DropDownList()
+textbox = TextBox()
+# print(isinstance(ddl, UIControl))
+draw([ddl, textbox])
+# draw(ddl)
